@@ -1,0 +1,2 @@
+# 此目录存放回归测试集（regression_set.jsonl）和历史结果
+# regression_set.jsonl 在第一轮调优后建立

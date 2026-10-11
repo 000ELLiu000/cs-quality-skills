@@ -1,0 +1,49 @@
+# ─── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+
+# ─── 过程产物（pipeline 中间文件）──────────────────────────────────────────────
+# SubAgent prompt 文件（生产过程中间产物，任务完成后可清理）
+**/*.prompt.txt
+# SubAgent result 文件（生产过程中间产物，任务完成后可清理）
+**/*.result.txt
+# prompts_todo.jsonl（Phase 1 中间产物，postprocess 完成后可清理）
+**/prompts_todo.jsonl
+
+# ─── 数据文件（体积大，不入库）─────────────────────────────────────────────────
+# 真实信号样本 Excel（用户提供，不入库）
+**/*.xlsx
+# 生产输出归档（体积可能很大）
+data/generated/
+!data/generated/.gitkeep
+
+# ─── 运行目录（整批过程产物）──────────────────────────────────────────────────
+# data/runs/ / judge/runs/ 下的子目录包含大量 prompt/result 文件，不入库
+# 若需保留 final.jsonl，请手动 git add -f 指定文件
+data/runs/
+!data/runs/.gitkeep
+data/judge_runs/
+!data/judge_runs/.gitkeep
+judge/runs/
+runs/
+
+# ─── 临时缓存目录（analyze_persona.py 等工具生成的中间 prompt 缓存）──────────────
+data/tmp/
+!data/tmp/.gitkeep
+
+# ─── IDE / 系统 ─────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local credentials
+.env
+.env.*
+*.pem
+*.key
+**/exec_mode.json

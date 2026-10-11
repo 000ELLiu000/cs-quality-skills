@@ -1,0 +1,33 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+
+# Python and editor caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store
+.idea/
+.vscode/
+
+# Private inputs and all run artifacts
+*.xlsx
+*.xls
+*.csv
+*.jsonl
+*.prompt.txt
+*.result.txt
+**/assets/real_signals/*
+!**/assets/real_signals/.gitkeep
+**/data/**
+!**/data/**/
+!**/data/**/.gitkeep
+**/judge/regression/results/*
+!**/judge/regression/results/.gitkeep
+**/exec_mode.json
+**/judge_progress.json
